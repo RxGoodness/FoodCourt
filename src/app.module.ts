@@ -196,7 +196,7 @@ import { AuthController } from './auth/auth.controller';
 import { AuthModule } from './auth/auth.module';
 import { AuthService } from './auth/auth.service';
 import { BrandModule } from './brand/brand.module';
-import { DbConnectionToken } from './meal-addon/db-connection.token';
+// import { DbConnectionToken } from './meal-addon/db-connection.token';
 import { MealAddonController } from './meal-addon/meal-addon.controller';
 import { MealAddonModule } from './meal-addon/meal-addon.module';
 import { MealAddonService } from './meal-addon/meal-addon.service';
@@ -219,16 +219,17 @@ const knexConfig: KnexModuleOptions = {
     AuthModule,
     UserModule,
     MealAddonModule,
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: '287693@Ata',
-      database: 'rxgoodness',
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true,
-    }),
+    BrandModule,
+    // TypeOrmModule.forRoot({
+    //   type: 'postgres',
+    //   host: 'localhost',
+    //   port: 5432,
+    //   username: 'postgres',
+    //   password: '287693@Ata',
+    //   database: 'rxgoodness',
+    //   entities: [__dirname + '/**/*.entity{.ts,.js}'],
+    //   synchronize: true,
+    // }),
     KnexModule.forRoot(knexConfig),
     // MealAddonModule,
     // BrandModule,
@@ -237,7 +238,7 @@ const knexConfig: KnexModuleOptions = {
   ],
   providers: [AppService, 
     // { provide: 'KnexConnection', useFactory: () => knexConfig, useValue:'dafault_connection' },
-    { provide: DbConnectionToken, useValue: 'default_connection' } 
+    // { provide: DbConnectionToken, useValue: 'default_connection' } 
   ],
   controllers: [AppController],
   // providers: [AuthService, UserService, MealAddonService],

@@ -3,12 +3,12 @@ import { InjectModel } from 'nestjs-objection';
 import { Knex } from 'nestjs-knex';
 import { Model } from 'objection';
 import { MealAddon } from './meal-addon.entity';
-import { DbConnectionToken } from './db-connection.token';
+// import { DbConnectionToken } from './db-connection.token';
 
 @Injectable()
 export class MealAddonService {
   constructor(
-    @Inject(DbConnectionToken) private dbConnection: any,
+    // @Inject(DbConnectionToken) private dbConnection: any,
     // @Inject('KnexConnection') private readonly connection: Knex,
     @InjectModel(MealAddon) private readonly mealAddonModel: typeof Model,
     private readonly knex: Knex,
