@@ -29,7 +29,7 @@ const knexConfig: KnexModuleOptions = {
     // TypeOrmModule.forFeature([UserModule]),
     // AuthModule,
     // UserModule
-    
+
   ],
   controllers: [MealAddonController, 
     // ObjectionModule
@@ -48,6 +48,7 @@ const knexConfig: KnexModuleOptions = {
     //   'KnexConnection',
     //   useValue: MealAddon,
     // },
+    
     MealAddon
   ],
   // exports:[MealAddonService]
